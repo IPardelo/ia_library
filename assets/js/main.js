@@ -124,7 +124,7 @@
   }
 
   window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
+    let portfolioContainer = select('#list.portfolio');
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: '.portfolio-item'
@@ -176,5 +176,5 @@
       mirror: false
     });
   });
-
+  
 })()
