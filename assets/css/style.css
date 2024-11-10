@@ -103,7 +103,11 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(60%);
 }
 .banner:hover {
-  background: red;
+  background: #833ab4;
+  background: linear-gradient(
+    to right,
+    #833ab4,#fd1d1d,#fcb045
+  );
 }
 .card_title {
   font-size: 24px;
@@ -318,6 +322,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
