@@ -17,7 +17,7 @@ Special thanks in advance to all contributors. We sincerely thank you all.
 ## Installation and modification
 If you have git installed, clone the repository with:
 ```
-git clone https://github.com/IPardelo/ia_library.git
+git clone https://github.com/IPardelo/ia-library.git
 ```
 
 
