@@ -145,6 +145,7 @@
         portfolioIsotope.on('arrangeComplete', function() {
           AOS.refresh()
         });
+		document.getElementById("list").scrollIntoView({behavior: 'smooth'});
       }, true);
     }
 
