@@ -26,4 +26,4 @@ git clone https://github.com/IPardelo/ia_library.git
 
 >A project made by [Ismael Casti&ntilde;eira](https://github.com/IPardelo/)
 
-[0]: https://ipardelo.github.io/ia_library/
+[0]: https://ipardelo.github.io/ia-library/
