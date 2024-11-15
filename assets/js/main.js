@@ -151,27 +151,39 @@
         }
 
     });
+	
+	function generarFiltros(arrayFiltros) {
+        const divPadre = document.getElementById('filters');
 
-    function generarDivs(array) {
+        for (let i = 0; i < arrayFiltros.length; i++) {
+            const contenedor = document.createElement('li');
+            contenedor.setAttribute('data-filter', "." + arrayFiltros[i][0]);
+			contenedor.textContent = arrayFiltros[i][1];
+
+            divPadre.appendChild(contenedor);
+        }
+    }
+
+    function generarLinks(arrayLinks) {
         const divPadre = document.getElementById('list_container');
 
-        for (let i = 0; i < array.length; i++) {
+        for (let i = 0; i < arrayLinks.length; i++) {
             const contenedor = document.createElement('div');
-            contenedor.className = "card categorias-item " + array[i][0];
+            contenedor.className = "card categorias-item " + arrayLinks[i][0];
 
             const nombre = document.createElement('span');
             nombre.className = "card_title";
-            nombre.textContent = array[i][1];
+            nombre.textContent = arrayLinks[i][1];
 
             const descripcion = document.createElement('p');
             descripcion.className = "card__subtitle";
-            descripcion.textContent = array[i][2];
+            descripcion.textContent = arrayLinks[i][2];
 
             const links = document.createElement('a');
             links.className = "button";
             links.textContent = "IR";
             links.setAttribute('target', '_blank');
-            links.href = array[i][3];
+            links.href = arrayLinks[i][3];
 
             contenedor.appendChild(nombre);
             contenedor.appendChild(descripcion);
@@ -181,19 +193,49 @@
         }
     }
 
-    //////////////////////////////////////////////// Movidas de divs dinamicos
+	// Informacion filtro de categoria
+	// POS 0 CATEGORIA, POS 1 NOMBRE
+	const arrayFiltros = [
+		["redes", "Redes Sociais, Marketing, SEO"],
+		["imagen", "Fotos e arte"],
+		["texto", "Texto"],
+		["video", "Audio e video"],
+		["asistente", "Asistente"],
+		["automatizacion", "Automatización"],
+		["programacion", "Programación"],
+		["divertido", "Divertido"],
+		["api", "API"],
+		["investigacion", "Investigación"],
+		["arquitectura", "Inmobiliaria/Arquitectura"],
+		["productividad", "Productividad"],
+		["finanzas", "Finanzas"],
+		["datos", "Análisis de Datos"],
+		["legal", "Legal y copywriting"],
+		["gym", "Gym"],
+		["educacion", "Educación"]
+	];
+
+    // Informacion webs
     // POS 0 CATEGORIA, POS 1 NOMBRE, POS 2 DESCRIPCION, POS 3 LINK WEB
-    const array = [
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""]
+    const arrayLinks = [
+        ["programacion", "V0.dev", "Genera interfaces web mediante lenguaje humano", "https://www.v0.dev"],
+        ["programacion", "Python tutor", "Ver comportamiento de código línea a línea", "https://pythontutor.com/"],
+        ["productividad", "Make workflows", "Crear workflows gratis no code", "https://eu2.make.com/"],
+        ["programacion", "Mixo", "Da unha idea e crea a web, logo etc.", "https://mixo.io/"],
+        ["imagen", "Microsoft Designer", "Genera carteles, imagenes etc e pódense rediseñar", "https://designer.microsoft.com/"],
+        ["video imagen texto", "Endless", "Convertir imagenes, texto, videos etc.", "https://endless.io/"],
+        ["programacion", "UINiverse", "Biblioteca de diseños para webs", "https://uiverse.io/"],
+        ["", "Hugging face", "Página multiherramienta", "https://huggingface.co/"],
+		["programacion", "Neumorphism", "Biblioteca y personalizador de diseños para web", "https://neumorphism.io/"],
+		["imagen", "Freepik pikaso", "Generador de imágenes con ia. (Marcar AI-promp)", "https://freepik.com/pikaso/"],
+		["imagen", "Perchance", "Generador de imágenes con ia.", "https://perchance.org/welcome/"],
+		["imagen", "Meshy", "Crear modelos 3D con lenguaje humano", "https://meshy.ai/"],
+		["programacion", "Get Lazy", "Crear programas web con lenguaje humano", "https://getlazy.ai/"],
+		["video", "Jitter video", "Crea animaciones", "https://jitter.video/"],
+		["imagen", "Recraft", "Crea sets de iconos", "https://www.recraft.ai/"]
     ];
 
-    generarDivs(array);
+	generarFiltros(arrayFiltros);
+    generarLinks(arrayLinks);
 
 })()
