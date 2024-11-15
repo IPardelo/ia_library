@@ -169,12 +169,12 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
-.portfolio #filters {
+.categorias #filters {
   list-style: none;
   margin-bottom: 20px;
 }
 
-.portfolio #filters li {
+.categorias #filters li {
   cursor: pointer;
   display: inline-block;
   margin: 10px 5px;
@@ -188,26 +188,26 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Public Pixel', sans-serif;
 }
 
-.portfolio #filters li:hover, .portfolio #filters li.filter-active {
+.categorias #filters li:hover, .categorias #filters li.filter-active {
   border-radius: 50px;
 background: #e0e0e0;
 box-shadow: inset 20px 20px 60px #aaaaaa,
             inset -20px -20px 60px #ffffff;
 }
 
-.portfolio .portfolio-item {
+.categorias .categorias-item {
   margin-bottom: 30px;
 }
 
-.portfolio .portfolio-item .portfolio-img {
+.categorias .categorias-item .categorias-img {
   overflow: hidden;
 }
 
-.portfolio .portfolio-item .portfolio-img img {
+.categorias .categorias-item .categorias-img img {
   transition: all 0.6s;
 }
 
-.portfolio .portfolio-item .portfolio-info {
+.categorias .categorias-item .categorias-info {
   opacity: 0;
   position: absolute;
   left: 15px;
@@ -219,7 +219,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   padding: 10px 15px;
 }
 
-.portfolio .portfolio-item .portfolio-info h4 {
+.categorias .categorias-item .categorias-info h4 {
   font-size: 18px;
   color: #fff;
   font-weight: 600;
@@ -227,13 +227,13 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   margin-bottom: 0px;
 }
 
-.portfolio .portfolio-item .portfolio-info p {
+.categorias .categorias-item .categorias-info p {
   color: #f9fcfe;
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.portfolio .portfolio-item .portfolio-info .preview-link, .portfolio .portfolio-item .portfolio-info .details-link {
+.categorias .categorias-item .categorias-info .preview-link, .categorias .categorias-item .categorias-info .details-link {
   position: absolute;
   right: 40px;
   font-size: 24px;
@@ -242,39 +242,39 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   transition: 0.3s;
 }
 
-.portfolio .portfolio-item .portfolio-info .preview-link:hover, .portfolio .portfolio-item .portfolio-info .details-link:hover {
+.categorias .categorias-item .categorias-info .preview-link:hover, .categorias .categorias-item .categorias-info .details-link:hover {
   color: #3a3a3a;
 }
 
-.portfolio .portfolio-item .portfolio-info .details-link {
+.categorias .categorias-item .categorias-info .details-link {
   right: 10px;
 }
 
-.portfolio .portfolio-item:hover .portfolio-img img {
+.categorias .categorias-item:hover .categorias-img img {
   transform: scale(1.15);
 }
 
-.portfolio .portfolio-item:hover .portfolio-info {
+.categorias .categorias-item:hover .categorias-info {
   opacity: 1;
 }
 
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
-.portfolio-details {
+.categorias-details {
   padding-top: 40px;
 }
 
-.portfolio-details .portfolio-details-slider img {
+.categorias-details .categorias-details-slider img {
   width: 100%;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination {
+.categorias-details .categorias-details-slider .swiper-pagination {
   margin-top: 20px;
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.categorias-details .categorias-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -282,16 +282,16 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   border: 1px solid #3a3a3a;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.categorias-details .categorias-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #3a3a3a;
 }
 
-.portfolio-details .portfolio-info {
+.categorias-details .categorias-info {
   padding: 30px;
   box-shadow: 0px 0 30px rgba(55, 81, 126, 0.08);
 }
 
-.portfolio-details .portfolio-info h3 {
+.categorias-details .categorias-info h3 {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -299,27 +299,27 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   border-bottom: 1px solid #eee;
 }
 
-.portfolio-details .portfolio-info ul {
+.categorias-details .categorias-info ul {
   list-style: none;
   padding: 0;
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li + li {
+.categorias-details .categorias-info ul li + li {
   margin-top: 10px;
 }
 
-.portfolio-details .portfolio-description {
+.categorias-details .categorias-description {
   padding-top: 30px;
 }
 
-.portfolio-details .portfolio-description h2 {
+.categorias-details .categorias-description h2 {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-.portfolio-details .portfolio-description p {
+.categorias-details .categorias-description p {
   padding: 0;
 }
 

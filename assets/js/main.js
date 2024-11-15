@@ -126,26 +126,23 @@
     }
 
     window.addEventListener('load', () => {
-        let portfolioContainer = select('#list.portfolio');
-        if (portfolioContainer) {
-            let portfolioIsotope = new Isotope(portfolioContainer, {
-                itemSelector: '.portfolio-item'
+        let categoriasContainer = select('#list.categorias');
+        if (categoriasContainer) {
+            let categoriasIsotope = new Isotope(categoriasContainer, {
+                itemSelector: '.categorias-item'
             });
 
-            let portfolioFilters = select('#filters li', true);
+            let categoriasFilters = select('#filters li', true);
 
             on('click', '#filters li', function (e) {
                 e.preventDefault();
-                portfolioFilters.forEach(function (el) {
+                categoriasFilters.forEach(function (el) {
                     el.classList.remove('filter-active');
                 });
                 this.classList.add('filter-active');
 
-                portfolioIsotope.arrange({
+                categoriasIsotope.arrange({
                     filter: this.getAttribute('data-filter')
-                });
-                portfolioIsotope.on('arrangeComplete', function () {
-                    AOS.refresh()
                 });
                 document.getElementById("list").scrollIntoView({
                     behavior: 'smooth'
@@ -160,7 +157,7 @@
 
         for (let i = 0; i < array.length; i++) {
             const contenedor = document.createElement('div');
-            contenedor.className = "card portfolio-item " + array[i][0];
+            contenedor.className = "card categorias-item " + array[i][0];
 
             const nombre = document.createElement('span');
             nombre.className = "card_title";
