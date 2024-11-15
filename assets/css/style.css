@@ -7,12 +7,12 @@ body {
 }
 
 a {
-  color: #47b2e4;
+  color: #3a3a3a;
   text-decoration: none;
 }
 
 a:hover {
-  color: #73c5eb;
+  color: #3a3a3a;
   text-decoration: none;
 }
 
@@ -243,7 +243,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
 }
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover, .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: #47b2e4;
+  color: #3a3a3a;
 }
 
 .portfolio .portfolio-item .portfolio-info .details-link {
@@ -279,11 +279,11 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #47b2e4;
+  border: 1px solid #3a3a3a;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #47b2e4;
+  background-color: #3a3a3a;
 }
 
 .portfolio-details .portfolio-info {
@@ -345,7 +345,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   padding: 0;
   line-height: 1;
   font-weight: 600;
-  color: #37517e;
+  color: #3a3a3a;
 }
 
 #footer .footer-newsletter form {
@@ -373,7 +373,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #47b2e4;
+  background: #3a3a3a;
   color: #fff;
   transition: 0.3s;
   border-radius: 50px;
@@ -400,7 +400,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   line-height: 1;
   text-transform: uppercase;
   font-weight: 600;
-  color: #37517e;
+  color: #3a3a3a;
 }
 
 #footer .footer-top .footer-contact p {
@@ -414,7 +414,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #37517e;
+  color: #3a3a3a;
   position: relative;
   padding-bottom: 12px;
 }
@@ -431,7 +431,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #47b2e4;
+  color: #3a3a3a;
   font-size: 18px;
   line-height: 1;
 }
@@ -455,13 +455,13 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
 
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
-  color: #47b2e4;
+  color: #3a3a3a;
 }
 
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #47b2e4;
+  background: #3a3a3a;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -524,7 +524,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #37517e;
+  background: #3a3a3a;
 }
 
 #preloader:before {
@@ -532,7 +532,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #37517e;
+  border: 6px solid #3a3a3a;
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
