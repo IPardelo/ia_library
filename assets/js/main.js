@@ -207,13 +207,10 @@
 		["automatizacion", "Automatización"],
 		["programacion", "Programación"],
 		["divertido", "Divertido"],
-		["api", "API"],
 		["arquitectura", "Inmobiliaria/Arquitectura"],
 		["productividad", "Productividad"],
-		["finanzas", "Finanzas"],
 		["datos", "Análisis de Datos"],
-		["legal", "Legal y copywriting"],
-		["gym", "Gym"]
+		["gym", "Gym y salud"]
 	];
 
     // Informacion webs
@@ -271,19 +268,23 @@
         ["productividad redes imagen multimedia textovoz", "Hugging face", "Página multiherramienta", "https://huggingface.co/"],
         ["productividad redes imagen multimedia voztexto", "Lecture", "Transform your PDFs, PowerPoints, YouTube videos, lectures, textbook, and class notes into trusted study tools.", "https://lecture.new"],
         ["productividad redes imagen multimedia textovoz", "TinyWow", "Herramientas de utilidad impulsadas por IA para hacer su vida más fácil. Las herramientas más comunes incluyen PDF, video, imagen, escritura AI y herramientas de conversión.", "https://tinywow.com/"],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""],
-        ["", "", "", ""]
+        ["programacion",                "OSS Insight",          "herramienta de consulta impulsada por GPT para la exploración de datos en vivo de GitHub. Simplemente haga su pregunta en lenguaje natural y Data Explore generará SQL, consultará los datos y presentará los resultados visualmente.", "https://ossinsight.io/explore/"],
+        ["programacion",                "AI Data Sidekick",     "Escribe SQL, documentación y más x10 veces más rápido con nuestra colección de potentes recetas. Gratis para individuos y pequeños equipos.", "https://www.airops.com/"],
+        ["datos",                       "LAION",                "LAION, como organización sin fines de lucro, proporciona conjuntos de datos, herramientas y modelos para liberar la investigación del aprendizaje automático. Fomentan la educación pública abierta y un uso de los recursos más respetuoso con el medio ambiente mediante la reutilización de conjuntos de datos y modelos existentes.", "https://laion.ai/"],
+        ["imagen",                      "Artsmart.ai",          "generación de imágenes de arte de IA hasta avatares de IA", "https://artsmart.ai/"],
+        ["imagen",                      "Character AI",         "", "https://character.ai/"],
+        ["imagen",                      "Caricaturer.io",       "convertir sus imágenes regulares en caricaturaS", "https://www.caricaturer.io/"],
+        ["imagen",                      "Creative Reality Studio", "convertirá tu visión en un avatar parlante en cuestión de segundos.", "https://studio.d-id.com/"],
+        ["imagen",                      "Imagetocartoon",       "creador de avatares que utiliza inteligencia artificial para convertir tus fotos en versiones de dibujos animados. ", "https://imagetocartoon.com/"],
+        ["imagen",                      "Kinetix",              "crear animaciones en 3D", "https://www.kinetix.tech/"],
+        ["imagen",                      "Vidext",               "estudio de producción totalmente en línea que transforma textos y documentos en videos atractivos en todos los idiomas", "https://www.vidext.io/es"],
+        ["imagen",                      "Vana Portrait",        "crear autorretratos tuyos en infinitos estilos.", "https://portrait.vana.com/"],
+        ["imagen",                      "Alethea",              "Alethea AI está trabajando para permitir la creación de NFT interactivos e inteligentes (iNFT).", "https://alethea.ai/"],
+        ["imagen",                      "Luma AI",              "Captura en 3D realista. Fotorrealismo, reflejos y detalles inigualables. ¡El futuro de VFX es ahora, para todos!", "https://lumalabs.ai/dream-machine"],
+        ["imagen",                      "Pixela AI",            "Texturas de Juegos Generadas por IA. Todas estas imágenes fueron generadas con un Algoritmo de Difusión Estable. ¡Sube tu textura generada para compartir con la comunidad!", "https://pixela.ai/"],
+        ["multimedia",                  "SplashMusic",          "Crear musica", "https://www.splashmusic.com/"],
+        ["imagen",                      "Pixelate",             "conversor de arte de imagen a píxelart", "https://www.scenario.com/features/pixelate"],
+        ["divertido",                   "Booom.ai",             "Genere un divertido juego de trivia que pueda jugar en torno a un tema ingresado. Puedes jugar solo o con amigos.", "https://joinplayroom.com/games/booom/"]
     ];
 
 	generarFiltros(arrayFiltros);
