@@ -272,7 +272,7 @@
         ["programacion",                                    "AI Data Sidekick",         "Escribe SQL, documentación y más x10 veces más rápido con nuestra colección de potentes recetas. Gratis para individuos y pequeños equipos.", "https://www.airops.com/"],
         ["datos",                                           "LAION",                    "LAION, como organización sin fines de lucro, proporciona conjuntos de datos, herramientas y modelos para liberar la investigación del aprendizaje automático. Fomentan la educación pública abierta y un uso de los recursos más respetuoso con el medio ambiente mediante la reutilización de conjuntos de datos y modelos existentes.", "https://laion.ai/"],
         ["imagen",                                          "Artsmart.ai",              "generación de imágenes de arte de IA hasta avatares de IA", "https://artsmart.ai/"],
-        ["imagen",                                          "Character AI",             ".", "https://character.ai/"],
+        ["imagen",                                          "Character AI",             "", "https://character.ai/"],
         ["imagen",                                          "Caricaturer.io",           "convertir sus imágenes regulares en caricaturaS", "https://www.caricaturer.io/"],
         ["imagen",                                          "Creative Reality Studio",  "convertirá tu visión en un avatar parlante en cuestión de segundos.", "https://studio.d-id.com/"],
         ["imagen",                                          "Imagetocartoon",           "creador de avatares que utiliza inteligencia artificial para convertir tus fotos en versiones de dibujos animados. ", "https://imagetocartoon.com/"],

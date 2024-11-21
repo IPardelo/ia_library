@@ -329,6 +329,29 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   padding: 0;
 }
 
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  section#list.categorias{
+    margin-left: 10vw !important;
+    margin-right: 10vw !important;
+  }
+  .card {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  section#list.categorias{
+    margin-left: 2vw !important;
+    margin-right: 2vw !important;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  section#list.categorias{
+    margin-left: 5vw !important;
+    margin-right: 5vw !important;
+  }
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
