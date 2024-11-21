@@ -170,6 +170,11 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+#list_container {
+  overflow: hidden;
+  width: 100%;
+}
+
 .categorias #filters {
   list-style: none;
   margin-bottom: 20px;
@@ -216,7 +221,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   z-index: 3;
   right: 15px;
   transition: all 0.3s;
-  background: rgba(55, 81, 126, 0.8);
+  background: #3a3a3a;
   padding: 10px 15px;
 }
 
