@@ -345,7 +345,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
     margin-right: 2vw !important;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
+@media screen and (min-width: 1024px) {
   section#list.categorias{
     margin-left: 5vw !important;
     margin-right: 5vw !important;
