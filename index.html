@@ -24,11 +24,11 @@
 					<div class="card" style="width: 70%;">
 						<a href="https://www.instagram.com/ipardelo/" target="_blank">
 							<div class="banner">
-								<span class="banner-text">by IPardelo</span>
-								<span class="banner-text">by IPardelo</span>
+								<span id="banner" class="banner-text"><!-- Aqui vai o banner de creditos --></span>
+								<span id="bannerHover" class="banner-text"><!-- Aqui vai o banner de creditos --></span>
 							</div>
 						</a>
-						<span class="title">Categor&iacute;as</span>
+						<span id="title" class="title"><!-- Aqui vai o titulo --></span>
 					</div>
 				</div>
 			</div>
@@ -37,7 +37,6 @@
 		<section id="categorias" class="categorias">
 			<div class="container" data-aos="fade-up">
 				<ul id="filters" data-aos="fade-up" data-aos-delay="100">
-					<li data-filter="*" class="filter-active">Todo</li>
 					<!-- Aqui van os filtros -->
 				</ul>
 			</div>
@@ -47,20 +46,23 @@
 			<div id="list_container">
 				<!-- Aqui van as webs -->
 			</div>
-		</section><!-- End list -->
+		</section><!-- End web list -->
 
 		<footer id="footer">
 			<div class="container footer-bottom clearfix">
-				<div class="copyright">
-					&copy; Copyright <strong><span>Ismael Casti&ntilde;eira</span></strong> 2025. All Rights Reserved
+				<div id="copyright" class="copyright">
+					&copy; <strong><span>Ismael Casti&ntilde;eira</span></strong> 2025.
 				</div>
-				<div class="credits">
-					Designed by Ismael Casti&ntilde;eira
-				</div>
+				<div id="credits" class="credits"><!-- Aqui vai o banner de creditos --></div>
 			</div>
 		</footer><!-- End Footer -->
 
 		<div id="preloader"></div>
+		<div id="idioma">
+			<img id="es" src="assets/img/es.png" style="cursor: pointer" title="Castellano" alt="Castellano">
+			<img id="gl" src="assets/img/gl.png" style="cursor: pointer" title="Galego" alt="Galego" >
+			<img id="en" src="assets/img/en.png" style="cursor: pointer" title="English" alt="English">
+		</div>
 		<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 		<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

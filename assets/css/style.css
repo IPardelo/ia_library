@@ -660,3 +660,17 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
 #header .logo img {
   max-height: 40px;
 }
+
+/*--------------------------------------------------------------
+# Internacionalizacion
+--------------------------------------------------------------*/
+#idioma {
+  position:fixed;
+  top:0;
+  right: 0;
+  padding: 1em;
+}
+
+#es, #gl, #en {
+  width: 1.5em;
+}
