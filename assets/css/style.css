@@ -26,6 +26,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   margin-bottom: 3em;
   margin-top: 3em;
+  transform: rotate(-2deg);
 }
 
 .title {
@@ -169,6 +170,11 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+#list_container {
+  overflow: hidden;
+  width: 100%;
+}
+
 .categorias #filters {
   list-style: none;
   margin-bottom: 20px;
@@ -215,7 +221,7 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
   z-index: 3;
   right: 15px;
   transition: all 0.3s;
-  background: rgba(55, 81, 126, 0.8);
+  background: #3a3a3a;
   padding: 10px 15px;
 }
 
@@ -321,6 +327,29 @@ box-shadow: inset 20px 20px 60px #aaaaaa,
 
 .categorias-details .categorias-description p {
   padding: 0;
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  section#list.categorias{
+    margin-left: 10vw !important;
+    margin-right: 10vw !important;
+  }
+  .card {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  section#list.categorias{
+    margin-left: 2vw !important;
+    margin-right: 2vw !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section#list.categorias{
+    margin-left: 5vw !important;
+    margin-right: 5vw !important;
+  }
 }
 
 /*--------------------------------------------------------------
