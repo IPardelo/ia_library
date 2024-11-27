@@ -152,21 +152,30 @@
 
     });
 	
-	function generarFiltros(arrayFiltros) {
+	function generarFiltros(arrayFiltros, idioma) {
         const divPadre = document.getElementById('filters');
 
+        // Filtro especial 'Todo'
+        const contenedor = document.createElement('li');
+        contenedor.className = "filter-active";
+        contenedor.setAttribute('data-filter', "*");
+        contenedor.textContent = idiomaDecoder(idioma, 'filtro.todo');
+        divPadre.appendChild(contenedor);
+
+        // Resto de filtros
         for (let i = 0; i < arrayFiltros.length; i++) {
             const contenedor = document.createElement('li');
             contenedor.setAttribute('data-filter', "." + arrayFiltros[i][0]);
-			contenedor.textContent = arrayFiltros[i][1];
+			contenedor.textContent = arrayFiltros[i][idiomaDecoder(idioma, 'filtro.posicion')];
 
             divPadre.appendChild(contenedor);
         }
     }
 
-    function generarLinks(arrayLinks) {
+    function generarLinks(arrayLinks, idioma) {
         const divPadre = document.getElementById('list_container');
 
+        // Lista de webs
         for (let i = 0; i < arrayLinks.length; i++) {
             const contenedor = document.createElement('div');
             contenedor.className = "card categorias-item " + arrayLinks[i][0];
@@ -177,13 +186,13 @@
 
             const descripcion = document.createElement('p');
             descripcion.className = "card__subtitle";
-            descripcion.textContent = arrayLinks[i][2];
+            descripcion.textContent = arrayLinks[i][idiomaDecoder(idioma, 'webs.descripcion.posicion')];
 
             const links = document.createElement('a');
             links.className = "button";
-            links.textContent = "IR";
+            links.textContent = idiomaDecoder(idioma, 'webs.ir');
             links.setAttribute('target', '_blank');
-            links.href = arrayLinks[i][3];
+            links.href = arrayLinks[i][2];
 
             contenedor.appendChild(nombre);
             contenedor.appendChild(descripcion);
@@ -194,100 +203,153 @@
     }
 
 	// Informacion filtro de categoria
-	// POS 0 CATEGORIA, POS 1 NOMBRE
+	// POS 0 CATEGORIA, POS 1 NOMBRE ES, POS 2 NOMBRE GAL, POS 3 NOMBRE ENG
 	const arrayFiltros = [
-		["redes", "Redes Sociales, Marketing, SEO"],
-		["imagen", "Fotos y arte"],
-		["textovoz", "Texto a voz"],
-        ["voztexto", "Voz a texto"],
-        ["textovideo", "Texto a video"],
-        ["buscador", "Buscador"],
-		["multimedia", "Multimedia"],
-		["asistente", "Asistente"],
-		["automatizacion", "Automatización"],
-		["programacion", "Programación"],
-		["divertido", "Divertido"],
-		["arquitectura", "Inmobiliaria/Arquitectura"],
-		["productividad", "Productividad"],
-		["datos", "Análisis de Datos"],
-		["gym", "Gym y salud"]
+		["redes",           "Redes Sociales, Marketing, SEO",   "Redes Sociais, Marketing, SEO",    "Social Networks, Marketing, SEO"],
+		["imagen",          "Fotos y arte",                     "Fotos e arte",                     "Photos and art"],
+		["textovoz",        "Texto a voz",                      "Texto a voz",                      "Text to voice"],
+        ["voztexto",        "Voz a texto",                      "Voz a texto",                      "Voice to text"],
+        ["textovideo",      "Texto a video", 				    "Texto a video", 					"Text to video"],
+        ["buscador",        "Buscador", 						"Buscador", 						"Serch"],
+		["multimedia",      "Multimedia", 						"Multimedia", 						"Multimedia"],
+		["asistente",       "Asistente",						"Asistente",						"Assistant"],
+		["automatizacion",  "Automatización", 					"Automatización", 					"Automation"],
+		["programacion",    "Programación", 					"Programación", 					"Programming"],
+		["divertido",       "Divertido", 						"Divertido", 						"Funny"],
+		["arquitectura",    "Inmobiliaria/Arquitectura", 		"Inmobiliaria/Arquitectura", 		"Architecture"],
+		["productividad",   "Productividad", 					"Productividad", 					"Productivity"],
+		["datos",           "Análisis de Datos", 				"Análisis de Datos", 				"Data Analysis"],
+		["gym",             "Gym y salud", 						"Gym e saúde", 						"Gym and health"]
 	];
 
     // Informacion webs
-    // POS 0 CATEGORIA, POS 1 NOMBRE, POS 2 DESCRIPCION, POS 3 LINK WEB
+    // POS 0 CATEGORIA, POS 1 NOMBRE, POS 2 LINK WEB, POS 3 DESCRIPCION ES, POS 4 DESCRIPCION GAL, POS 5 DESCRIPCION ENG
     const arrayLinks = [
-        ["programacion",                                    "V0.dev",                   "Genera interfaces web mediante lenguaje humano", "https://www.v0.dev"],
-        ["programacion",                                    "Python tutor",             "Ver comportamiento de código línea a línea", "https://pythontutor.com/"],
-        ["productividad",                                   "Make workflows",           "Crear workflows gratis no code", "https://eu2.make.com/"],
-        ["programacion",                                    "Mixo",                     "Da unha idea e crea a web, logo etc.", "https://mixo.io/"],
-        ["imagen",                                          "Microsoft Designer",       "Genera carteles, imagenes etc e pódense rediseñar", "https://designer.microsoft.com/"],
-        ["multimedia imagen textovoz",                      "Endless",                  "Convertir imagenes, texto, videos etc.", "https://endless.io/"],
-        ["programacion",                                    "UINiverse",                "Biblioteca de diseños para webs", "https://uiverse.io/"],
-		["programacion",                                    "Neumorphism",              "Biblioteca y personalizador de diseños para web", "https://neumorphism.io/"],
-		["imagen",                                          "Freepik pikaso",           "Generador de imágenes con ia. (Marcar AI-promp)", "https://freepik.com/pikaso/"],
-		["imagen",                                          "Perchance",                "Generador de imágenes con ia.", "https://perchance.org/welcome/"],
-		["imagen",                                          "Meshy",                    "Crear modelos 3D con lenguaje humano", "https://meshy.ai/"],
-		["programacion",                                    "Get Lazy",                 "Crear programas web con lenguaje humano", "https://getlazy.ai/"],
-		["multimedia",                                      "Jitter video",             "Crea animaciones", "https://jitter.video/"],
-		["imagen",                                          "Recraft",                  "Crea sets de iconos", "https://www.recraft.ai/"],
-        ["textovoz",                                        "TTS Maker",                "Texto a voz", "https://ttsmaker.com/"],
-        ["textovoz",                                        "Uberduck",                 "Texto a voz", "https://www.uberduck.ai/"],
-        ["voztexto",                                        "Adobe Podcast",            "Grabación y edición de audio impulsado por IA, todo en la web.", "https://podcast.adobe.com/"],
-        ["productividad",                                   "GPTionary",                "Diccionario de sinónimos", "https://gptionary.com/"],
-        ["productividad",                                   "Chat gpt writer",          "Extensión gratuita de Chrome que utiliza ChatGPT para resumir artículos en la web.", "https://chatgptwriter.ai/"],
-        ["voztexto buscador",                               "Fathom.fm",                "Recomendaciones, busque dentro de podcasts, lea transcripciones, navegue por episodios usando capítulos y mucho más. ¡Es una forma completamente nueva de experimentar los podcasts!", "https://hello.fathom.fm/"],
-        ["voztexto productividad",                          "Neurospell",               "Autocorrector ortográfico y gramatical basado en Deep Learning. Disponible en más de 30 idiomas. ", "https://neurospell.com/"],
-        ["voztexto",                                        "Steno",                    "Tus podcasts favoritos transcritos en su totalidad. Descubre, consulta y lee mientras los escuchas.", "https://www.steno.ai/"],
-        ["textovoz buscador",                               "Ask my book",              "Experimento de IA creado por Sahil Lavingia, para hacer que su libro sea más accesible. Puedes usar Ask My Book para hacer una pregunta y obtener una respuesta en su voz.", "https://askmybook.com"],
-        ["textovideo",                                      "Genmo AI",                 "Genmo ofrece generación de videos fantásticos con IA. También puedes ver videos generados por la comunidad.", "https://www.genmo.ai/"],
-        ["productividad",                                   "GPT Sheets",               "Similar a ChatGPT, pero en Google Sheets. Obtén ayuda con la inspiración, categorización, traducción, corrección, resumen con la función GPT.", "https://workspace.google.com/marketplace/app/gpt_for_sheets/677318054654"],
-        ["redes",                                           "ECommerce Prompt Gen.",    "Recetas listas para usar de ChatGPT creadas por ingenieros rápidos para ayudarlo a configurar su tienda y campañas de marketing rápidamente", "https://www.ecommerceprompts.com/"],
-        ["redes",                                           "ProductBot",               "Recomendador y experto en productos de IA que ayuda a los usuarios a tomar decisiones de compra. Los usuarios pueden especificar sus necesidades y la herramienta sugerirá productos relacionados.", "https://www.getproduct.help/"],
-        ["imagen",                                          "Tattoos AI",               "Diseña tu tatuajecon IA", "https://www.tattoosai.com/"],
-        ["productividad",                                   "Wisdolia",                 "Una extensión de Chrome que usa IA para generar tarjetas didácticas (con preguntas y respuestas) para cualquier artículo/PDF para que puedas arraigar mejor lo que lees.", "https://jungleai.com/es/"],
-        ["productividad",                                   "Tutor AI",                 "Plataforma de aprendizaje impulsada por IA. Puedes ingresar cualquier tema y te proporcionará varias opciones que puedes usar para aprender sobre ese tema.", "https://tutorai.me/"],
-        ["productividad",                                   "Transvribe",               "Diseñado para hacer que el aprendizaje en YouTube sea 10 veces más productivo.", "https://www.transvribe.com/"],
-        ["productividad",                                   "Teach Anything",           "Encuentra rápidamente respuestas a preguntas sobre cualquier tema. Tienes que escribir tus preguntas, elegir un idioma y el nivel de dificultad. Después de eso, obtendrás la respuesta.", "https://www.teach-anything.com/"],
-        ["productividad buscador",                          "PaperBrain",               "Una plataforma para que pueda acceder y comprender los trabajos de investigación. Con resúmenes en papel y enlaces directos en pdf, nunca más tendrá que luchar con descargas tediosas.", "https://www.paperbrain.org/"],
-        ["productividad",                                   "Grammar GPT",              "Una inteligencia artificial puede corregir los errores gramaticales de un texto de manera gratuita.", "https://www.grammar-gpt.com"],
-        ["productividad",                                   "GPTZero",                  "Detector de contenido de IA que puede clasificar textos humanos y generados por IA junto con contenido mixto. La herramienta ha aparecido en CNBC, CNN y más.", "https://gptzero.me/"],
-        ["productividad",                                   "Doctrina AI",              "diseñado para ayudar a los estudiantes y niños a estudiar mejor y adaptarse a los nuevos desafíos del aprendizaje remoto y en línea.", "https://www.doctrina.ai/"],
-        ["productividad",                                   "VenturusAI",               "herramienta para evaluar ideas de negocios y le brinda retroalimentación y análisis integral sobre cómo hacerlo exitoso", "https://venturusai.com/"],
-        ["productividad",                                   "Namy AI",                  "herramienta simple para generar algunas ideas de nombres de dominio para su negocio o marca. ", "https://namy.ai/"],
-        ["productividad",                                   "Naming Magic",             "Deje que GPT-3 haga una lluvia de ideas sobre los nombres de su empresa o producto y encuentre los nombres de dominio disponibles.", "https://www.namingmagic.com/"],
-        ["productividad",                                   "NameWizard AI",            "Permite crear un nombre generado por IA para su idea/proyecto/inicio.", "https://namewizard.ai/"],
-        ["productividad",                                   "Magic Form",               "Capacite a su propio vendedor de IA en menos de 3 minutos para generar confianza y aumentar las conversiones de su sitio en un 20 % a través de conversaciones en tiempo real.", "https://www.magicform.ai/"],
-        ["mutimedia",                                       "Songr.ai",                 "Hacer canciones", "https://www.songr.ai/"],
-        ["mutimedia",                                       "Suno",                     "Hacer canciones", "https://suno.com/"],
-        ["productividad",                                   "Rephraser AI",             "Reformule el texto usando AI,", "https://ahrefs.com/writing-tools/paraphrasing-tool"],
-        ["productividad redes",                             "Optimo",                   "programa de marketing gratuito impulsado por IA que simplifica y acelera el proceso de marketing", "https://askoptimo.com/"],
-        ["productividad redes",                             "Harpa.ai",                 "Extensión de Chrome y una plataforma NoCode RPA impulsada por IA que ahorra tiempo y dinero al automatizar tareas en la web para usted.", "https://harpa.ai/"],
-        ["productividad",                                   "Finding Words",            "Creador de obituarios de IA por Empathy. Crear un tributo significativo a su ser querido puede ser una tarea difícil y emotiva. Con Finding Words de Empathy, simplemente puede responder una serie de preguntas y nuestra IA redactará un obituario en su honor.", "https://www.empathy.com/"],
-        ["productividad redes imagen",                      "Cowriter",                 "Generar publicaciones creativas en blogs, ensayos, titulares, imágenes o cualquier otro contenido en minutos, todo optimizado especialmente para el marketing y el uso creativo.", "https://cowriter.org/login"],
-        ["productividad redes imagen",                      "Jounce AI",                "Redacción de textos publicitarios y el material gráfico", "https://www.jounce.ai/"],
-        ["productividad redes imagen multimedia textovoz",  "Hugging face",             "Página multiherramienta", "https://huggingface.co/"],
-        ["productividad redes imagen multimedia voztexto",  "Lecture",                  "Transform your PDFs, PowerPoints, YouTube videos, lectures, textbook, and class notes into trusted study tools.", "https://lecture.new"],
-        ["productividad redes imagen multimedia textovoz",  "TinyWow",                  "Herramientas de utilidad impulsadas por IA para hacer su vida más fácil. Las herramientas más comunes incluyen PDF, video, imagen, escritura AI y herramientas de conversión.", "https://tinywow.com/"],
-        ["programacion",                                    "OSS Insight",              "herramienta de consulta impulsada por GPT para la exploración de datos en vivo de GitHub. Simplemente haga su pregunta en lenguaje natural y Data Explore generará SQL, consultará los datos y presentará los resultados visualmente.", "https://ossinsight.io/explore/"],
-        ["programacion",                                    "AI Data Sidekick",         "Escribe SQL, documentación y más x10 veces más rápido con nuestra colección de potentes recetas. Gratis para individuos y pequeños equipos.", "https://www.airops.com/"],
-        ["datos",                                           "LAION",                    "Proporciona conjuntos de datos, herramientas y modelos para liberar la investigación del aprendizaje automático.", "https://laion.ai/"],
-        ["imagen",                                          "Artsmart.ai",              "Generación de imágenes de arte de IA hasta avatares de IA", "https://artsmart.ai/"],
-        ["imagen",                                          "Character AI",             "Bots de chat superinteligentes que te escuchan, te entienden y te recuerdan", "https://character.ai/"],
-        ["imagen",                                          "Caricaturer.io",           "convertir sus imágenes regulares en caricaturaS", "https://www.caricaturer.io/"],
-        ["imagen",                                          "Creative Reality Studio",  "convertirá tu visión en un avatar parlante en cuestión de segundos.", "https://studio.d-id.com/"],
-        ["imagen",                                          "Imagetocartoon",           "creador de avatares que utiliza inteligencia artificial para convertir tus fotos en versiones de dibujos animados. ", "https://imagetocartoon.com/"],
-        ["imagen",                                          "Kinetix",                  "crear animaciones en 3D", "https://www.kinetix.tech/"],
-        ["imagen",                                          "Vidext",                   "estudio de producción totalmente en línea que transforma textos y documentos en videos atractivos en todos los idiomas", "https://www.vidext.io/es"],
-        ["imagen",                                          "Vana Portrait",            "crear autorretratos tuyos en infinitos estilos.", "https://portrait.vana.com/"],
-        ["imagen",                                          "Alethea",                  "Permite la creación de NFT interactivos e inteligentes (iNFT).", "https://alethea.ai/"],
-        ["imagen",                                          "Luma AI",                  "Captura en 3D realista. Fotorrealismo, reflejos y detalles inigualables. ¡El futuro de VFX es ahora, para todos!", "https://lumalabs.ai/dream-machine"],
-        ["imagen",                                          "Pixela AI",                "Texturas de Juegos Generadas por IA. ¡Sube tu textura generada para compartir con la comunidad!", "https://pixela.ai/"],
-        ["multimedia",                                      "SplashMusic",              "Crear musica", "https://www.splashmusic.com/"],
-        ["imagen",                                          "Pixelate",                 "Conversor de arte de imagen a píxelart", "https://www.scenario.com/features/pixelate"],
-        ["divertido",                                       "Booom.ai",                 "Genere un divertido juego de trivia que pueda jugar en torno a un tema ingresado. Puedes jugar solo o con amigos.", "https://joinplayroom.com/games/booom/"]
+        ["programacion",                                    "V0.dev",                   "https://www.v0.dev",                       "Genera interfaces web mediante lenguaje humano", "", ""],
+        ["programacion",                                    "Python tutor",             "https://pythontutor.com/",                 "Ver comportamiento de código línea a línea", "", ""],
+        ["productividad",                                   "Make workflows",           "https://eu2.make.com/",                    "Crear workflows gratis no code", "", ""],
+        ["programacion",                                    "Mixo",                     "https://mixo.io/",                         "Da unha idea e crea a web, logo etc."],
+        ["imagen",                                          "Microsoft Designer",       "https://designer.microsoft.com/",          "Genera carteles, imagenes etc e pódense rediseñar",  "", ""],
+        ["multimedia imagen textovoz",                      "Endless",                  "https://endless.io/",                      "Convertir imagenes, texto, videos etc.", "", ""],
+        ["programacion",                                    "UINiverse",                "https://uiverse.io/",                      "Biblioteca de diseños para webs", "", ""],
+		["programacion",                                    "Neumorphism",              "https://neumorphism.io/",                  "Biblioteca y personalizador de diseños para web", "", ""],
+		["imagen",                                          "Freepik pikaso",           "https://freepik.com/pikaso/",              "Generador de imágenes con ia. (Marcar AI-promp)", "", ""],
+		["imagen",                                          "Perchance",                "https://perchance.org/welcome/",           "Generador de imágenes con ia.", "", ""],
+		["imagen",                                          "Meshy",                    "https://meshy.ai/",                        "Crear modelos 3D con lenguaje humano", "", ""],
+		["programacion",                                    "Get Lazy",                 "https://getlazy.ai/",                      "Crear programas web con lenguaje humano", "", ""],
+		["multimedia",                                      "Jitter video",             "https://jitter.video/",                    "Crea animaciones", "", ""],
+		["imagen",                                          "Recraft",                  "https://www.recraft.ai/",                  "Crea sets de iconos", "", ""],
+        ["textovoz",                                        "TTS Maker",                "https://ttsmaker.com/",                    "Texto a voz", "", ""],
+        ["textovoz",                                        "Uberduck",                 "https://www.uberduck.ai/",                 "Texto a voz", "", ""],
+        ["voztexto",                                        "Adobe Podcast",            "https://podcast.adobe.com/",               "Grabación y edición de audio impulsado por IA, todo en la web.", "", ""],
+        ["productividad",                                   "GPTionary",                "https://gptionary.com/",                   "Diccionario de sinónimos",  "", ""],
+        ["productividad",                                   "Chat gpt writer",          "https://chatgptwriter.ai/",                "Extensión gratuita de Chrome que utiliza ChatGPT para resumir artículos en la web.", "", ""],
+        ["voztexto buscador",                               "Fathom.fm",                "https://hello.fathom.fm/",                 "Recomendaciones, busque dentro de podcasts, lea transcripciones, navegue por episodios usando capítulos y mucho más. ¡Es una forma completamente nueva de experimentar los podcasts!", "", ""],
+        ["voztexto productividad",                          "Neurospell",               "https://neurospell.com/",                  "Autocorrector ortográfico y gramatical basado en Deep Learning. Disponible en más de 30 idiomas. ", "", ""],
+        ["voztexto",                                        "Steno",                    "https://www.steno.ai/",                    "Tus podcasts favoritos transcritos en su totalidad. Descubre, consulta y lee mientras los escuchas.", "", ""],
+        ["textovoz buscador",                               "Ask my book",              "https://askmybook.com",                    "Experimento de IA creado por Sahil Lavingia, para hacer que su libro sea más accesible. Puedes usar Ask My Book para hacer una pregunta y obtener una respuesta en su voz.", "", ""],
+        ["textovideo",                                      "Genmo AI",                 "https://www.genmo.ai/",                    "Genmo ofrece generación de videos fantásticos con IA. También puedes ver videos generados por la comunidad.", "", ""],
+        ["productividad",                                   "GPT Sheets",               "https://workspace.google.com/marketplace/app/gpt_for_sheets/677318054654",     "Similar a ChatGPT, pero en Google Sheets. Obtén ayuda con la inspiración, categorización, traducción, corrección, resumen con la función GPT.", "", ""],
+        ["redes",                                           "ECommerce Prompt Gen.",    "https://www.ecommerceprompts.com/",        "Recetas listas para usar de ChatGPT creadas por ingenieros rápidos para ayudarlo a configurar su tienda y campañas de marketing rápidamente", "", ""],
+        ["redes",                                           "ProductBot",               "https://www.getproduct.help/",             "Recomendador y experto en productos de IA que ayuda a los usuarios a tomar decisiones de compra. Los usuarios pueden especificar sus necesidades y la herramienta sugerirá productos relacionados.", "", ""],
+        ["imagen",                                          "Tattoos AI",               "https://www.tattoosai.com/",               "Diseña tu tatuajecon IA", "", ""],
+        ["productividad",                                   "Wisdolia",                 "https://jungleai.com/es/",                 "Una extensión de Chrome que usa IA para generar tarjetas didácticas (con preguntas y respuestas) para cualquier artículo/PDF para que puedas arraigar mejor lo que lees.", "", ""],
+        ["productividad",                                   "Tutor AI",                 "https://tutorai.me/",                      "Plataforma de aprendizaje impulsada por IA. Puedes ingresar cualquier tema y te proporcionará varias opciones que puedes usar para aprender sobre ese tema.", "", ""],
+        ["productividad",                                   "Transvribe",               "https://www.transvribe.com/",              "Diseñado para hacer que el aprendizaje en YouTube sea 10 veces más productivo.", "", ""],
+        ["productividad",                                   "Teach Anything",           "https://www.teach-anything.com/",          "Encuentra rápidamente respuestas a preguntas sobre cualquier tema. Tienes que escribir tus preguntas, elegir un idioma y el nivel de dificultad. Después de eso, obtendrás la respuesta.", "", ""],
+        ["productividad buscador",                          "PaperBrain",               "https://www.paperbrain.org/",              "Una plataforma para que pueda acceder y comprender los trabajos de investigación. Con resúmenes en papel y enlaces directos en pdf, nunca más tendrá que luchar con descargas tediosas.", "", ""],
+        ["productividad",                                   "Grammar GPT",              "https://www.grammar-gpt.com",              "Una inteligencia artificial puede corregir los errores gramaticales de un texto de manera gratuita.", "", ""],
+        ["productividad",                                   "GPTZero",                  "https://gptzero.me/",                      "Detector de contenido de IA que puede clasificar textos humanos y generados por IA junto con contenido mixto. La herramienta ha aparecido en CNBC, CNN y más.", "", ""],
+        ["productividad",                                   "Doctrina AI",              "https://www.doctrina.ai/",                 "Diseñado para ayudar a los estudiantes y niños a estudiar mejor y adaptarse a los nuevos desafíos del aprendizaje remoto y en línea.", "", ""],
+        ["productividad",                                   "VenturusAI",               "https://venturusai.com/",                  "Herramienta para evaluar ideas de negocios y le brinda retroalimentación y análisis integral sobre cómo hacerlo exitoso", "", ""],
+        ["productividad",                                   "Namy AI",                  "https://namy.ai/",                         "Herramienta simple para generar algunas ideas de nombres de dominio para su negocio o marca. ", "", ""],
+        ["productividad",                                   "Naming Magic",             "https://www.namingmagic.com/",             "Deje que GPT-3 haga una lluvia de ideas sobre los nombres de su empresa o producto y encuentre los nombres de dominio disponibles.", "", ""],
+        ["productividad",                                   "NameWizard AI",            "https://namewizard.ai/",                   "Permite crear un nombre generado por IA para su idea/proyecto/inicio.", "", ""],
+        ["productividad",                                   "Magic Form",               "https://www.magicform.ai/",                "Capacite a su propio vendedor de IA en menos de 3 minutos para generar confianza y aumentar las conversiones de su sitio en un 20 % a través de conversaciones en tiempo real.", "", ""],
+        ["mutimedia",                                       "Songr.ai",                 "https://www.songr.ai/",                    "Hacer canciones",  "", ""],
+        ["mutimedia",                                       "Suno",                     "https://suno.com/",                        "Hacer canciones",  "", ""],
+        ["productividad",                                   "Rephraser AI",             "https://ahrefs.com/writing-tools/paraphrasing-tool",   "Reformule el texto usando AI,",  "", ""],
+        ["productividad redes",                             "Optimo",                   "https://askoptimo.com/",                   "Programa de marketing gratuito impulsado por IA que simplifica y acelera el proceso de marketing", "", ""],
+        ["productividad redes",                             "Harpa.ai",                 "https://harpa.ai/",                        "Extensión de Chrome y una plataforma NoCode RPA impulsada por IA que ahorra tiempo y dinero al automatizar tareas en la web para usted.", "", ""],
+        ["productividad",                                   "Finding Words",            "https://www.empathy.com/",                 "Creador de obituarios de IA por Empathy. Crear un tributo significativo a su ser querido puede ser una tarea difícil y emotiva. Con Finding Words de Empathy, simplemente puede responder una serie de preguntas y nuestra IA redactará un obituario en su honor.", "", ""],
+        ["productividad redes imagen",                      "Cowriter",                 "https://cowriter.org/login",               "Generar publicaciones creativas en blogs, ensayos, titulares, imágenes o cualquier otro contenido en minutos, todo optimizado especialmente para el marketing y el uso creativo.", "", ""],
+        ["productividad redes imagen",                      "Jounce AI",                "https://www.jounce.ai/",                   "Redacción de textos publicitarios y el material gráfico", "", ""],
+        ["productividad redes imagen multimedia textovoz",  "Hugging face",             "https://huggingface.co/",                  "Página multiherramienta", "", ""],
+        ["productividad redes imagen multimedia voztexto",  "Lecture",                  "https://lecture.new",                      "Transform your PDFs, PowerPoints, YouTube videos, lectures, textbook, and class notes into trusted study tools.", "", ""],
+        ["productividad redes imagen multimedia textovoz",  "TinyWow",                  "https://tinywow.com/",                     "Herramientas de utilidad impulsadas por IA para hacer su vida más fácil. Las herramientas más comunes incluyen PDF, video, imagen, escritura AI y herramientas de conversión.", "", ""],
+        ["programacion",                                    "OSS Insight",              "https://ossinsight.io/explore/",           "Herramienta de consulta impulsada por GPT para la exploración de datos en vivo de GitHub. Simplemente haga su pregunta en lenguaje natural y Data Explore generará SQL, consultará los datos y presentará los resultados visualmente.", "", ""],
+        ["programacion",                                    "AI Data Sidekick",         "https://www.airops.com/",                  "Escribe SQL, documentación y más x10 veces más rápido con nuestra colección de potentes recetas. Gratis para individuos y pequeños equipos.", "", ""],
+        ["datos",                                           "LAION",                    "https://laion.ai/",                        "Proporciona conjuntos de datos, herramientas y modelos para liberar la investigación del aprendizaje automático.", "", ""],
+        ["imagen",                                          "Artsmart.ai",              "https://artsmart.ai/",                     "Generación de imágenes de arte de IA hasta avatares de IA", "", ""],
+        ["imagen",                                          "Character AI",             "https://character.ai/",                    "Bots de chat superinteligentes que te escuchan, te entienden y te recuerdan",  "", ""],
+        ["imagen",                                          "Caricaturer.io",           "https://www.caricaturer.io/",              "Convertir sus imágenes regulares en caricaturaS", "", ""],
+        ["imagen",                                          "Creative Reality Studio",  "https://studio.d-id.com/",                 "Convertirá tu visión en un avatar parlante en cuestión de segundos.", "", ""],
+        ["imagen",                                          "Imagetocartoon",           "https://imagetocartoon.com/",              "Creador de avatares que utiliza inteligencia artificial para convertir tus fotos en versiones de dibujos animados. ", "", ""],
+        ["imagen",                                          "Kinetix",                  "https://www.kinetix.tech/",                "Crear animaciones en 3D", "", ""],
+        ["imagen",                                          "Vidext",                   "https://www.vidext.io/es",                 "Estudio de producción totalmente en línea que transforma textos y documentos en videos atractivos en todos los idiomas", "", ""],
+        ["imagen",                                          "Vana Portrait",            "https://portrait.vana.com/",               "Crear autorretratos tuyos en infinitos estilos.", "", ""],
+        ["imagen",                                          "Alethea",                  "https://alethea.ai/",                      "Permite la creación de NFT interactivos e inteligentes (iNFT).", "", ""],
+        ["imagen",                                          "Luma AI",                  "https://lumalabs.ai/dream-machine",        "Captura en 3D realista. Fotorrealismo, reflejos y detalles inigualables. ¡El futuro de VFX es ahora, para todos!", "", ""],
+        ["imagen",                                          "Pixela AI",                "https://pixela.ai/",                       "Texturas de Juegos Generadas por IA. ¡Sube tu textura generada para compartir con la comunidad!", "", ""],
+        ["multimedia",                                      "SplashMusic",              "https://www.splashmusic.com/",             "Crear musica", "", ""],
+        ["imagen",                                          "Pixelate",                 "https://www.scenario.com/features/pixelate",   "Conversor de arte de imagen a píxelart", "", ""],
+        ["divertido",                                       "Booom.ai",                 "https://joinplayroom.com/games/booom/",    "Genere un divertido juego de trivia que pueda jugar en torno a un tema ingresado. Puedes jugar solo o con amigos.", "", ""]
     ];
 
-	generarFiltros(arrayFiltros);
-    generarLinks(arrayLinks);
+    // Internacionalizacion general
+    // POS 0 ID, POS 1 ES, POS 2 GAL, POS 3 ENG
+    const arrayInternacionalizacion = [
+        {id: 'filtro.todo',                     es: "Todo",                                 gl: "Todo",                             en: "All"},
+        {id: 'filtro.posicion',                 es: 1,                                      gl: 2,                                  en: 3},
+        {id: 'webs.descripcion.posicion',       es: 3,                                      gl: 4,                                  en: 5},
+        {id: 'webs.ir',                         es: "IR",                                   gl: "IR",                               en: "GO"},
+        {id: 'titulo.categoria',                es: "Categorías",                           gl: "Categorías",                       en: "Categories"},
+        {id: 'titulo.creditos',                 es: "por IPardelo",                         gl: "por IPardelo",                     en: "by IPardelo"},
+        {id: 'piepagina.creditos',              es: "Diseñado por Ismael Castiñeira",       gl: "Deseñado por Ismael Castiñeira",   en: "Designed by Ismael Castiñeira"}
+    ];
+
+    // Decodificador de idioma
+    function idiomaDecoder(idioma, id) {
+        const posicion = arrayInternacionalizacion.findIndex(tarea => tarea.id === id);
+        if (idioma == "es") {
+            return arrayInternacionalizacion[posicion].es;
+        } else if (idioma == "en") {
+            return arrayInternacionalizacion[posicion].en;
+        } else {
+            return arrayInternacionalizacion[posicion].gl;
+        }
+    }
+
+    // Funcion para cambio de idioma
+    function cambioIdioma(idioma) {
+        generarFiltros(arrayFiltros, idioma);
+        generarLinks(arrayLinks, idioma);
+        document.getElementById("title").innerHTML = idiomaDecoder(idioma, 'titulo.categoria');
+        document.getElementById("credits").innerHTML = idiomaDecoder(idioma, 'piepagina.creditos');
+        document.getElementById("banner").innerHTML = idiomaDecoder(idioma, 'titulo.creditos');
+        document.getElementById("bannerHover").innerHTML = idiomaDecoder(idioma, 'titulo.creditos');
+    }
+
+    // Listener para os iconos da bandeiras
+    const imagenes = document.querySelectorAll('img');
+    imagenes.forEach(imagen => {
+      imagen.addEventListener('click', () => {
+        const padre1 = document.getElementById('filters');
+        const padre2 = document.getElementById('list_container');
+        while (padre1.firstChild) {
+            padre1.removeChild(padre1.firstChild);
+        }
+        while (padre2.firstChild) {
+            padre2.removeChild(padre2.firstChild);
+        }
+        cambioIdioma(imagen.id.toString());
+      });
+    });
+
+    // Cando cargue o documento cargamos o idioma
+    window.addEventListener('load', function() {
+        const idioma = "es";
+        cambioIdioma(idioma);
+    });
 
 })()
